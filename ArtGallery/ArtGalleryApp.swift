@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ArtGalleryApp: App {
+    @StateObject var viewModel = ArtGalleryViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ArtGalleryListView()
+                .environmentObject(viewModel)
         }
     }
 }
